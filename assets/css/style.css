@@ -1,6 +1,9 @@
+:root {
+  --backgroudColor: rgba(51, 51, 51, 0.5);
+}
+
 body {
-  background-image: url("https://www.presentationpoint.com/wp-content/uploads/2019/02/dphdwep.gif");
-  background-repeat: no-repeat;
+  background-image: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
   background-position: 100%;
 }
@@ -11,10 +14,15 @@ body {
 }
 
 #locationHistory {
-  border: 2px solid #333;
   width: 12vw;
   margin: 0 10vw;
   padding: 0;
+  /* background-color: var(--backgroudColor); */
+}
+
+aside{
+  color: white;
+  text-align: center;
 }
 
 form input {
@@ -24,7 +32,7 @@ form input {
 }
 
 form button {
-  background-color: #333;
+  background-color: var(--backgroudColor);
   color: white;
   display: block;
   margin: 1rem;
@@ -32,11 +40,11 @@ form button {
 }
 
 #locationHistoryButtons {
-  overflow: scroll;
+  overflow: hidden;
   height: 48vh;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 #locationHistoryButtons Button {
@@ -44,39 +52,21 @@ form button {
   margin: 1rem;
   width: 10vw;
   align-items: center;
+  color: white;
+  background-color: var(--backgroudColor);
+
 }
 
 #WeatherDetailsArea {
   width: 50vw;
   height: max-content;
-  border: 2px solid #333;
 }
 
 #mainWeatherCard {
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    width: 90;
-    height: 15rem;
-    padding: 1rem;
-    margin: 1rem;
-    text-align: center;
-    border-radius: 1rem;
-  }
-
-
-
-
-#weatherCardContainer {
-  display: flex;
-  width: auto;
-}
-
-.weatherCard {
-  background-color: #333;
+  background-color: var(--backgroudColor);
   color: white;
   text-decoration: none;
-  width: 15rem;
+  width: 90;
   height: 15rem;
   padding: 1rem;
   margin: 1rem;
@@ -84,41 +74,28 @@ form button {
   border-radius: 1rem;
 }
 
-/* Set the width and height of the scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  
-  /* Set the background color of the track */
-  ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-  }
-  
-  /* Set the color of the scrollbar handle */
-  ::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 5px;
-  }
-  
-  /* Set the color of the scrollbar handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-  
-  /* Add a glow effect to the scrollbar handle */
-  ::-webkit-scrollbar-thumb:active {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Add a gradient effect to the scrollbar track */
-  ::-webkit-scrollbar-track-piece:start {
-    background: linear-gradient(to bottom, #e0e0e0, #f9f9f9);
-  }
-  
-  /* Add a shadow effect to the top of the scrollbar track */
-  ::-webkit-scrollbar-track-piece:end {
-    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-  
+#weatherCardContainer {
+  display: flex;
+  width: auto;
+}
+
+.weatherCard {
+  background-color: var(--backgroudColor);
+  color: white;
+  text-decoration: none;
+  width: 16rem;
+  height: 22rem;
+  padding: 2rem;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.weatherCard img {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 1rem;
+}
