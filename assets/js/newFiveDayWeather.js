@@ -58,7 +58,7 @@ function getfiveDayForcast() {
 
       })}
 
-      getfiveDayForcast()
+
 
 // console.log(data);
 
