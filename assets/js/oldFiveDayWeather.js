@@ -49,37 +49,36 @@ function getfiveDayForcast() {
             tempMin: e.main.temp_min,
             tempMax: e.main.temp_max,
             feelLike: e.main.feels_like,
-            icon: `http://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`,
+            icon: `https://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`,
             desciription: e.weather[0].description,
             wind: e.wind.speed,
           });
         }
       });
-console.log(fiveDayObject)
+      console.log(fiveDayObject);
       //populateHourlyObjects(uniqueDates);
       //Call the function to generate the daily weather cards
       createDailyWeatherCards(fiveDayObject);
     })
     .catch((error) => {
-      console.log(error)
+      console.log(error);
     });
 }
 
-
-
 function createDailyWeatherCards(weatherArray) {
-    const weatherCardContainer = document.getElementById("weatherCardContainer");
-    weatherArray.forEach((day) => {
-      if (day.hour.length === 0) {
-        console.log("no data");
-        return; // skip this iteration
-      }
-      const avgTemp = day.hour.reduce((sum, hour) => sum + hour.temp, 0) / day.hour.length;
-      const curDayData = day.hour[2];
-      const date = day.date;
-      const weatherIconUrl = curDayData.icon;
-  
-      const weatherCard = `
+  const weatherCardContainer = document.getElementById("weatherCardContainer");
+  weatherArray.forEach((day) => {
+    if (day.hour.length === 0) {
+      console.log("no data");
+      return; // skip this iteration
+    }
+    const avgTemp =
+      day.hour.reduce((sum, hour) => sum + hour.temp, 0) / day.hour.length;
+    const curDayData = day.hour[2];
+    const date = day.date;
+    const weatherIconUrl = curDayData.icon;
+
+    const weatherCard = `
         <div class="weatherCard">
           <p>${date}</p>
           <img class="weatherIcon" src="${weatherIconUrl}" alt="weatherIcon" />
@@ -91,16 +90,11 @@ function createDailyWeatherCards(weatherArray) {
           <p>Feels Like: ${curDayData.feelLike}</p>
         </div>
       `;
-  
-     
-      weatherCardContainer.insertAdjacentHTML("beforeend", weatherCard);
 
-      // weatherCardContainer.innerHTML += weatherCard;
-    });
-  }
-  
+    weatherCardContainer.insertAdjacentHTML("beforeend", weatherCard);
 
-
-
+    // weatherCardContainer.innerHTML += weatherCard;
+  });
+}
 
 getfiveDayForcast();

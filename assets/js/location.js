@@ -7,8 +7,8 @@ function handleClick(event) {
   let cityInput = city.value;
   let stateInput = state.value;
 
-  const stateURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInput},${stateInput},&limit=1&appid=${apiKey}`;
-  const cityURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInput},&limit=1&appid=${apiKey}`;
+  const stateURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput},${stateInput},&limit=1&appid=${apiKey}`;
+  const cityURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput},&limit=1&appid=${apiKey}`;
 
   const selectedURL = (stateInput = "" ? cityURL : stateURL);
 

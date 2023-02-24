@@ -30,7 +30,7 @@ function getfiveDayForcast() {
           } else {
             console.log(date, hourStr);
         
-            const icon = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
+            const icon = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
             const temp = day.main.temp;
             const humid = day.main.humidity;
             const wind = day.wind.speed;
