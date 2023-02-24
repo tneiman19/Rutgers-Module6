@@ -16,7 +16,7 @@ function getfiveDayForcast() {
       }
     })
     .then((data) => {
-      console.log(data);
+      //console.log(data);
 
       //populateFiveDayObject
       data.list.forEach((element) => {
@@ -32,7 +32,7 @@ function getfiveDayForcast() {
         fiveDayObject.push({ date, hour: [] });
       });
 
-      console.log(fiveDayObject);
+      //console.log(fiveDayObject);
 
       // Populate the hourly array in fiveDayObject\
 
@@ -55,7 +55,7 @@ function getfiveDayForcast() {
           });
         }
       });
-
+console.log(fiveDayObject)
       //populateHourlyObjects(uniqueDates);
       //Call the function to generate the daily weather cards
       createDailyWeatherCards(fiveDayObject);
@@ -64,9 +64,6 @@ function getfiveDayForcast() {
       console.log(error)
     });
 }
-
-
-
 
 
 
@@ -95,7 +92,10 @@ function createDailyWeatherCards(weatherArray) {
         </div>
       `;
   
-      weatherCardContainer.innerHTML += weatherCard;
+     
+      weatherCardContainer.insertAdjacentHTML("beforeend", weatherCard);
+
+      // weatherCardContainer.innerHTML += weatherCard;
     });
   }
   
