@@ -29,7 +29,7 @@ function delayedFunctionCall() {
     setTimeout(function() {
       checkLocalStorage();
       onLoadButtons();
-    }, 10000); // 10 seconds delay
+    }, 5000); // 5 seconds delay
   }
   
   delayedFunctionCall();
