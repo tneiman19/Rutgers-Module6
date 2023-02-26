@@ -1,101 +1,127 @@
 :root {
-  --backgroudColor: rgba(51, 51, 51, 0.5);
+  --background-color: rgba(51, 51, 51, 0.5);
 }
 
 body {
-  background-image: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover;
-  background-position: 100%;
+  background-color: var(--background-color);
 }
 
 #fullSection {
   display: flex;
-  padding-top: 15vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5vh 5vw;
 }
 
 #locationHistory {
-  width: 12vw;
-  margin: 0 10vw;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 2vw;
   padding: 0;
-  /* background-color: var(--backgroudColor); */
 }
 
-aside{
+aside {
   color: white;
   text-align: center;
 }
 
-form input {
+form input,
+form button {
   display: block;
-  margin: 1rem;
-  width: 10vw;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 200px;
 }
 
 form button {
-  background-color: var(--backgroudColor);
+  background-color: var(--background-color);
   color: white;
-  display: block;
-  margin: 1rem;
-  width: 10vw;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #locationHistoryButtons {
-  overflow: hidden;
-  height: 48vh;
+  overflow-y: auto;
+  height: 50vh;
   padding: 0;
   margin: 0;
-  /* overflow-x: hidden; */
 }
 
-#locationHistoryButtons Button {
+#locationHistoryButtons button {
   display: block;
-  margin: 1rem;
-  width: 10vw;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 200px;
   align-items: center;
   color: white;
-  background-color: var(--backgroudColor);
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
+#locationHistoryButtons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #WeatherDetailsArea {
-  width: 50vw;
-  height: max-content;
+  flex: 1;
+  max-width: 800px;
+  margin: 0 2vw;
 }
 
 #mainWeatherCard {
-  background-color: var(--backgroudColor);
+  background-color: var(--background-color);
   color: white;
   text-decoration: none;
-  width: 90;
-  height: 15rem;
+  width: 80%;
+  max-width: 500px;
+  height: max-content;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem auto;
   text-align: center;
   border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #weatherCardContainer {
   display: flex;
-  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 2vw;
+  margin: 2rem auto;
 }
 
 .weatherCard {
-  background-color: var(--backgroudColor);
+  background-color: var(--background-color);
   color: white;
   text-decoration: none;
-  width: 16rem;
+  width: calc(33.33% - 1rem);
+  max-width: 300px;
   height: 22rem;
   padding: 2rem;
   margin: 0.5rem;
   text-align: center;
   border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .weatherCard img {
   width: 3rem;
   height: 3rem;
   padding: 0;
-  margin: 0;
-
-  border-radius: 1rem;
+  margin: 0 0 1rem;
 }

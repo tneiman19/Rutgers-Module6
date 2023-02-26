@@ -1,3 +1,7 @@
+//***The code in this file is not being used anymore.  It has been replaced with file newFiveDayWeather.js*** 
+
+
+
 //Assuming we already have the longitude and latitude
 
 function getfiveDayForcast() {

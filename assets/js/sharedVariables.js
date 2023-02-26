@@ -1,3 +1,5 @@
+var lastSearchIncludedState = false;
+var lastSearchString = "";
 var lat = 40.08;
 var lon = -74.2;
 const apiKey = "043390da5a76d81703ed4fe2131f4f11";

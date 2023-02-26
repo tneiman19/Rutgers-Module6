@@ -12,6 +12,8 @@ function handleClick(event) {
 
   const selectedURL = (stateInput = "" ? cityURL : stateURL);
 
+  lastSearchIncludedState = stateInput = "" ? false : true;
+
   console.log("click");
   console.log(selectedURL);
 
@@ -39,13 +41,30 @@ function getlocation(url) {
     .then((data) => {
       lat = data[0].lat;
       lon = data[0].lon;
-      deleteChildElements();
-      getCurrentWeather();
-      getfiveDayForcast();
 
+      switch (lastSearchIncludedState) {
+        case true:
+          //console.log(`${data[0].name}, ${data[0].state}`);
+          lastSearchString = `${data[0].name}, ${data[0].state}`;
+          break;
+        case false:
+          //console.log(`${data[0].name}, (${data[0].country})`);
+          lastSearchString = `${data[0].name}, (${data[0].country})`;
+          break;
+        default:
+          //console.log("unknown");
+          lastSearchString = "";
+      }
+      recordLocation();
+      delayedFunctionCall() 
+      deleteChildElements();
+      getCurrentWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
+      getfiveDayForcast( `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
+      console.log(data);
       console.log(lat, lon);
     })
     .catch((error) => {
       console.error(error);
+      alert(error);
     });
 }
